@@ -1,0 +1,24 @@
+/* Settings */
+@import './global/Settings';
+
+/* Tools */
+@import './global/Tools';
+
+/*  Generic and ELements */
+@import './global/Base';
+@import './global/Scroll';
+
+/* Objects */
+@import './global/Layout';
+
+/* Components */
+@import './components/Nav';
+@import './components/NavMobile';
+@import './components/Header';
+@import './components/HowToPlay';
+@import './components/Modes';
+@import './components/Contact';
+@import './components/Footer';
+
+/* Pages */
+@import './pages/HomeView';

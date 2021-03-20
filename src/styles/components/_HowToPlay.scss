@@ -1,0 +1,62 @@
+.HowToPlay{
+  background-color: $Container;
+  .l-contain{
+    padding: 35px 0;
+  }
+  &__Title{
+    margin-bottom: 39px;
+    h2{
+      text-align: center;
+      font-weight: 700;
+      font-size: 36px;
+    }
+    hr{
+      display: block;
+      width: 100px;
+      border: none;
+      height: 5px;
+      background-color: $Light;
+      margin: 5px auto 0;
+    }
+  }
+  &__Description{
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 957px;
+    margin: 0 auto 30px;
+  }
+  &__Grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  &__Item{
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    grid-gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    i{
+      color: $LightBlue;
+      align-self: center;
+    }
+    p{
+      align-self: center;
+      font-size: 14px;
+    }
+  }
+}
+
+@include mq($Desktop){
+  .HowToPlay{
+    &__Grid{
+      grid-template-columns: 1fr 1fr;
+    }
+    &__Item:nth-child(2){
+      justify-self: end;
+    }
+  }
+}

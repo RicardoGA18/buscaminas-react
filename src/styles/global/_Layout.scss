@@ -1,0 +1,23 @@
+.l-container{
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: $Pd-Mobile;
+}
+.l-contain{
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  max-width: $Secure;
+}
+@include mq($Tablet){
+  .l-container{
+    padding: $Pd-Tablet;
+  }
+}
+@include mq($Desktop){
+  .l-container{
+    padding: $Pd-Desktop;
+  }
+}

@@ -1,0 +1,29 @@
+.HomeView{
+  padding-top: 50px;
+  &__Back{
+    position: fixed;
+    z-index: 2;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 50px;
+    background-color: $Orange;
+    border-radius: 10px;
+    @include flexCenter;
+    cursor: pointer;
+    transition: .3s all;
+    p{
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &:hover{
+      background-color: rgba(242,153,74,.8);
+    }
+  }
+}
+
+@include mq($Desktop){
+  .HomeView{
+    padding-top: 70px;
+  }
+}

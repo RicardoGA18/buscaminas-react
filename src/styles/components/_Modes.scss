@@ -1,0 +1,77 @@
+.Modes{
+  padding: 35px 0;
+  &__Title{
+    margin-bottom: 30px;
+    p{
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    hr{
+      display: block;
+      width: 100px;
+      height: 5px;
+      border: none;
+      background-color: $Light;
+      margin: 0 auto;
+    }
+  }
+  &__Grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  &__Card{
+    width: 100%;
+    background-color: $Container;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 420px;
+    margin: 0 auto;
+    i{
+      display: block;
+      text-align: center;
+      margin: 15px 0 10px;
+      color: $LightBlue;
+    }
+    h3{
+      font-size: 24px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    p{
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      max-width: 275px;
+      margin: 0 auto 20px;
+    }
+    button{
+      height: 40px;
+      padding: 0 15px;
+      border-radius: 10px;
+      border: none;
+      background-color: $LightBlue;
+      color: $Light;
+      font-weight: bold;
+      font-size: 18px;
+      display: block;
+      margin: 0 auto;
+      transition: .3s all;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color: #2dbcf9b9;
+    }
+  }
+}
+@include mq($Desktop){
+  .Modes{
+    &__Grid{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

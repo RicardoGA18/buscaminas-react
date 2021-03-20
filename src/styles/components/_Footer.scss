@@ -1,0 +1,12 @@
+.Footer{
+  background-color: black;
+  height: 50px;
+  .l-contain{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    p{
+      font-size: 18px;
+    }
+  }
+}

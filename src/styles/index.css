@@ -1,0 +1,861 @@
+/* Settings */
+/* Colors */
+/* Breakpoints */
+/* Padding */
+/* Tools */
+/*  Generic and ELements */
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+/* Generic */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Elements */
+html {
+  min-height: 100%;
+  background-color: #0E1B24;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+}
+
+p, span, a, label {
+  font-weight: 400;
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+}
+
+img, input, svg, div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input:focus, textarea:focus, select:focus, button:focus {
+  outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px #616161;
+  box-shadow: inset 0 0 5px #616161;
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #686868;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #464646;
+}
+
+/* Objects */
+.l-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0 15px;
+}
+
+.l-contain {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media screen and (min-width: 500px) {
+  .l-container {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .l-container {
+    padding: 0 40px;
+  }
+}
+
+/* Components */
+.Nav {
+  height: 70px;
+  background-color: #26323A;
+  -webkit-box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.Nav .l-contain {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Nav a {
+  display: block;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Nav__Logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Nav__Logo img {
+  width: 59.43px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.Nav__Logo p {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.Nav__List {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Nav__Item {
+  padding: 0 15px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.Nav__Item p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Nav__Item:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Nav__LogOut {
+  padding-left: 15px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Nav__LogOut button {
+  height: 40px;
+  padding: 0 10px;
+  background-color: #EB5757;
+  border: none;
+  border-radius: 10px;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  cursor: pointer;
+}
+
+.Nav__LogOut button i {
+  color: #FFFFFF;
+}
+
+.Nav__LogOut button:hover {
+  background-color: #eb5757b7;
+}
+
+.Nav__User {
+  height: 100%;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.Nav__UserImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 10px;
+  background-color: #0E1B24;
+}
+
+.Nav__UserImg img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.Nav__User i {
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+
+.Nav__User p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Nav__User:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Nav__Play {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 15px;
+}
+
+.Nav__Play button {
+  height: 40px;
+  padding: 0 15px;
+  background-color: #2DBDF9;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.Nav__Play button:hover {
+  background-color: #2dbcf9b9;
+}
+
+@media screen and (min-width: 1000px) {
+  .Nav {
+    display: block;
+  }
+}
+
+.NavMob {
+  height: 50px;
+  background-color: #26323A;
+  position: fixed;
+  -webkit-box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+}
+
+.NavMob .l-contain {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.NavMob a {
+  display: block;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavMob__Logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavMob__Logo img {
+  width: 44.57px;
+  height: 30px;
+}
+
+.NavMob__Logo p {
+  font-size: 14px;
+  display: none;
+  margin-left: 5px;
+}
+
+.NavMob__Buttons {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.NavMob__Play {
+  height: 100%;
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavMob__Play button {
+  padding: 0 10px;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  background-color: #2DBDF9;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.NavMob__User {
+  height: 100%;
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavMob__User i {
+  color: #FFFFFF;
+}
+
+.NavMob__UserImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #0E1B24;
+  overflow: hidden;
+}
+
+.NavMob__UserImg img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.NavMob__LogOut {
+  height: 100%;
+  padding-right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavMob__LogOut button {
+  height: 30px;
+  padding: 7px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #EB5757;
+  border: none;
+}
+
+.NavMob__LogOut button i {
+  color: #FFFFFF;
+}
+
+.NavMob__Bars {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.NavMob__Check {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.NavMob__Check input, .NavMob__Check i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FFFFFF;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.NavMob__Check input {
+  opacity: 0;
+  z-index: 2;
+}
+
+.NavMob__Check i.fa-times {
+  opacity: 0;
+}
+
+.NavMob__Check input:checked ~ i.fa-bars {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  opacity: 0;
+}
+
+.NavMob__Check input:checked ~ i.fa-times {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  opacity: 1;
+}
+
+@media screen and (min-width: 500px) {
+  .NavMob__Logo p {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .NavMob {
+    display: none;
+  }
+}
+
+.Header {
+  height: 500px;
+}
+
+.HowToPlay {
+  background-color: #26323A;
+}
+
+.HowToPlay .l-contain {
+  padding: 35px 0;
+}
+
+.HowToPlay__Title {
+  margin-bottom: 39px;
+}
+
+.HowToPlay__Title h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.HowToPlay__Title hr {
+  display: block;
+  width: 100px;
+  border: none;
+  height: 5px;
+  background-color: #FFFFFF;
+  margin: 5px auto 0;
+}
+
+.HowToPlay__Description {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  max-width: 957px;
+  margin: 0 auto 30px;
+}
+
+.HowToPlay__Grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.HowToPlay__Item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 32px 1fr;
+      grid-template-columns: 32px 1fr;
+  grid-gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.HowToPlay__Item i {
+  color: #2DBDF9;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.HowToPlay__Item p {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 1000px) {
+  .HowToPlay__Grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .HowToPlay__Item:nth-child(2) {
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+}
+
+.Modes {
+  padding: 35px 0;
+}
+
+.Modes__Title {
+  margin-bottom: 30px;
+}
+
+.Modes__Title p {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.Modes__Title hr {
+  display: block;
+  width: 100px;
+  height: 5px;
+  border: none;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.Modes__Grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+.Modes__Card {
+  width: 100%;
+  background-color: #26323A;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.Modes__Card i {
+  display: block;
+  text-align: center;
+  margin: 15px 0 10px;
+  color: #2DBDF9;
+}
+
+.Modes__Card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Modes__Card p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 275px;
+  margin: 0 auto 20px;
+}
+
+.Modes__Card button {
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2DBDF9;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin: 0 auto;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.Modes__Card button:hover {
+  background-color: #2dbcf9b9;
+}
+
+@media screen and (min-width: 1000px) {
+  .Modes__Grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+.Contact {
+  background-color: #26323A;
+}
+
+.Contact .l-contain {
+  padding: 35px 0;
+}
+
+.Contact__Title {
+  margin-bottom: 20px;
+}
+
+.Contact__Title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.Contact__Title hr {
+  display: block;
+  width: 100px;
+  height: 5px;
+  border: none;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.Contact__Form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.Contact__Form input[type="text"], .Contact__Form textarea {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.Contact__Form textarea {
+  height: 200px;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.Contact__Form input[type="submit"] {
+  display: block;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2DBDF9;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 18px;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.Contact__Form input[type="submit"]:hover {
+  background-color: #2dbcf9b9;
+}
+
+.Footer {
+  background-color: black;
+  height: 50px;
+}
+
+.Footer .l-contain {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Footer .l-contain p {
+  font-size: 18px;
+}
+
+/* Pages */
+.HomeView {
+  padding-top: 50px;
+}
+
+.HomeView__Back {
+  position: fixed;
+  z-index: 2;
+  bottom: 30px;
+  right: 30px;
+  width: 100px;
+  height: 50px;
+  background-color: #F2994A;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.HomeView__Back p {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.HomeView__Back:hover {
+  background-color: rgba(242, 153, 74, 0.8);
+}
+
+@media screen and (min-width: 1000px) {
+  .HomeView {
+    padding-top: 70px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

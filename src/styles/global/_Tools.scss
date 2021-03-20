@@ -1,0 +1,11 @@
+@mixin mq($breakpoint) {
+  @media screen and (min-width: $breakpoint){
+    @content;
+  }
+}
+
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

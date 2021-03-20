@@ -1,0 +1,136 @@
+.NavMob{
+  height: 50px;
+  background-color: $Container;
+  position: fixed;
+  box-shadow: 5px 5px 4px rgba(0,0,0,.25);
+  top: 0;
+  left: 0;
+  .l-contain{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  a{
+    display: block;
+    height: 100%;
+    @include flexCenter;
+  }
+  &__Logo{
+    display: flex;
+    align-items: center;
+    img{
+      width: 44.57px;
+      height: 30px;
+    }
+    p{
+      font-size: 14px;
+      display: none;
+      margin-left: 5px;
+    }
+  }
+  &__Buttons{
+    height: 100%;
+    display: flex;
+  }
+  &__Play{
+    height: 100%;
+    padding-right: 15px;
+    @include flexCenter;
+    button{
+      padding: 0 10px;
+      border-radius: 5px;
+      border: none;
+      height: 30px;
+      background-color: $LightBlue;
+      color: $Light;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  &__User{
+    height: 100%;
+    padding-right: 15px;
+    @include flexCenter;
+    i{
+      color: $Light;
+    }
+    &Img{
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      background-color: $Dark;
+      overflow: hidden;
+      img{
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  &__LogOut{
+    height: 100%;
+    padding-right: 15px;
+    @include flexCenter;
+    button{
+      height: 30px;
+      padding: 7px;
+      border-radius: 5px;
+      @include flexCenter;
+      background-color: $Red;
+      border: none;
+      i{
+        color: $Light;
+      }
+    }
+  }
+  &__Bars{
+    height: 100%;
+    @include flexCenter;
+  }
+  &__Check{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    input,i{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include flexCenter;
+      color: $Light;
+      transition: .3s all;
+    }
+    input{
+      opacity: 0;
+      z-index: 2;
+    }
+    i.fa-times{
+      opacity: 0;
+    }
+    input:checked ~ i.fa-bars{
+      transform: rotate(180deg);
+      opacity: 0;
+    }
+    input:checked ~ i.fa-times{
+      transform: rotate(180deg);
+      opacity: 1;
+    }
+  }
+}
+
+@include mq($Tablet){
+  .NavMob{
+    &__Logo{
+      p{
+        display: block;
+      }
+    }
+  }
+}
+
+@include mq($Desktop){
+  .NavMob{
+    display: none;
+  }
+}

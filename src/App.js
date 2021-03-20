@@ -1,8 +1,27 @@
+// React
+import {BrowserRouter, Switch} from 'react-router-dom'
+// Routes
+import PublicRoute from './routes/public.routes'
+// Observer
+import Observer from './components/Observer'
+// Context
+import AppState from './context/App/AppState'
+// Views
+import HomeView from './views/HomeView';
+
 function App() {
   return (
-    <div>
-      <h1>Hola mundo - React Buscaminas</h1>
-    </div>
+    <>
+      <AppState>
+        <Observer>
+          <BrowserRouter>
+            <Switch>
+              <PublicRoute exact path="/" component={HomeView}/>
+            </Switch>
+          </BrowserRouter>
+        </Observer>
+      </AppState>
+    </>
   );
 }
 
