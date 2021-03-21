@@ -1,4 +1,4 @@
-import {SET_ERROR} from '../types'
+import {SET_ERROR,SET_USER} from '../types'
 
 const AppReducer =  (state,action) => {
   const {payload,type} = action
@@ -7,6 +7,11 @@ const AppReducer =  (state,action) => {
       return {
         ...state,
         error: payload
+      }
+    case SET_USER:
+      return {
+        ...state,
+        user: payload
       }
     default:
       return state

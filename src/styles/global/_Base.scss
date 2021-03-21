@@ -40,6 +40,9 @@ p,span,a,label{
   color: $Light;
   font-family: 'Poppins', sans-serif;
 }
+span{
+  color: $Dark;
+}
 img,input,svg,div{
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }

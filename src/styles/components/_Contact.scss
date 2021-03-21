@@ -27,7 +27,7 @@
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    input[type="text"],textarea{
+    input[type="text"],input[type="email"],textarea{
       width: 100%;
       height: 50px;
       border-radius: 10px;
@@ -35,6 +35,12 @@
       padding: 0 20px;
       font-size: 16px;
       font-weight: 400;
+      &:focus:valid{
+        box-shadow: 0 0 5px 2px rgb(93, 230, 93);
+      }
+      &:focus:invalid{
+        box-shadow: 0 0 5px 2px $Red;
+      }
     }
     textarea{
       height: 200px;
@@ -52,6 +58,7 @@
       font-weight: 700;
       font-size: 18px;
       transition: .3s all;
+      cursor: pointer;
       &:hover{
         background-color: #2dbcf9b9;
       }

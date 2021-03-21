@@ -1,0 +1,46 @@
+.LogNav{
+  background-color: $Container;
+  height: 50px;
+  position: fixed;
+  box-shadow: 5px 5px 4px rgba(0,0,0,.25);
+  top: 0;
+  left: 0;
+  .l-contain{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  a{
+    display: block;
+    height: 100%;
+  }
+  &__Logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    img{
+      width: 44.57px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    p{
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
+@include mq($Desktop){
+  .LogNav{
+    height: 70px;
+    &__Logo{
+      img{
+        width: 59.43px;
+        height: 40px;
+      }
+      p{
+        font-size: 24px;
+        font-weight: 500;
+      }
+    }
+  }
+}

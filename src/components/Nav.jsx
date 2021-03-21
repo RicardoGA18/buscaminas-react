@@ -1,13 +1,50 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 // Context
 import {useContext} from 'react'
 import AppContext from '../context/App/AppContext'
 // Assets
 import logo from '../assets/logo.png'
+import desktop from '../assets/desktop.png'
+// Carousel
+import ModalCarousel from './ModalCarousel'
+import Swal from 'sweetalert2'
 
 const Nav = () => {
-  const {user} = useContext(AppContext)
+  const {user,logout} = useContext(AppContext)
+  const [modal,setModal] = useState({
+    open: false,
+    mobile: false
+  })
+  const history = useHistory()
+
+  const setDesktopMessage = () => {
+    Swal.fire({
+      title: 'Whoops!',
+      text: 'Por el momento el juego solo funciona en desktop, cambia de dispositivo para comenzar a jugar.',
+      imageUrl: desktop,
+      imageWidth: 100,
+      imageHeight: 88.89,
+      imageAlt: 'Desktop',
+    })
+  }
+
+  const manageLogout = async () => {
+    const respond = await Swal.fire({
+      title: '¿Seguro?',
+      html: '<span style="color: black">Cerrarás sesión</span>',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+    })
+    if(respond.isConfirmed){
+      logout()
+    }
+  }
 
   const manageUser = () => {
     if(user){
@@ -20,17 +57,25 @@ const Nav = () => {
             <p>{user.username}</p>
           </div>
           <div className="Nav__LogOut">
-            <button>
+            <button onClick={manageLogout}>
               <i className="fas fa-sign-out-alt fa-2x"></i>
             </button>
+          </div>
+          <div className="Nav__Play">
+            <button onClick={() => {history.push('/jugar')}}>Jugar</button>
           </div>
         </>
       )
     }else{
       return (
-        <div className="Nav__Item">
-          <p>Mi cuenta</p>
-        </div>
+        <>
+          <div className="Nav__Item" onClick={() => {history.push('/iniciar-sesion')}}>
+            <p>Mi cuenta</p>
+          </div>
+          <div className="Nav__Play">
+            <button onClick={() => {history.push('/iniciar-sesion')}}>Jugar</button>
+          </div>
+        </>
       )
     }
   }
@@ -45,13 +90,37 @@ const Nav = () => {
               : (<i className="fas fa-user"></i>)}
           </div>
           <div className="NavMob__LogOut">
-            <button><i className="fas fa-sign-out-alt"></i></button>
+            <button onClick={manageLogout}><i className="fas fa-sign-out-alt"></i></button>
           </div>
         </>
       )
     }else{
       return <></>
     }
+  }
+
+  const manageDrop = (e) => {
+    const dropbox = document.querySelector('.NavMob__Drop')
+    const BgNav = document.querySelector('.BgNav')
+    if(e.target.checked){
+      dropbox.style.maxHeight= '100px'
+      dropbox.style.border = 'border: 1px solid rgba(255,255,255,.10)'
+      BgNav.style.display = 'block'
+    }else{
+      dropbox.style.maxHeight= '0px'
+      dropbox.style.border = 'none'
+      BgNav.style.display = 'none'
+    }
+  }
+
+  const resetBg = () => {
+    const dropbox = document.querySelector('.NavMob__Drop')
+    const BgNav = document.querySelector('.BgNav')
+    const checkDrop = document.getElementById('checkDrop')
+    dropbox.style.maxHeight= '0px'
+    dropbox.style.border = 'none'
+    BgNav.style.display = 'none'
+    checkDrop.checked = false
   }
 
   return (
@@ -65,23 +134,27 @@ const Nav = () => {
             </div>
           </Link>
           <div className="Nav__List">
-            <div className="Nav__Item">
+            <div className="Nav__Item" onClick={() => {history.push('/')}}>
               <p>Inicio</p>
             </div>
-            <div className="Nav__Item">
+            <div className="Nav__Item" onClick={() => {setModal({open: true, mobile: false})}}>
               <p>¿Cómo Jugar?</p>
             </div>
-            <div className="Nav__Item">
-              <p>Modos de juego</p>
-            </div>
             {manageUser()}
-            <div className="Nav__Play">
-              <button>Jugar</button>
-            </div>
           </div>
         </div>
       </div>
       <nav className="NavMob l-container">
+        <div className="NavMob__Drop">
+          <p onClick={() => {
+            resetBg()
+            history.push('/')
+          }}>Inicio</p>
+          <p onClick={() => {
+            resetBg()
+            setModal({open: true, mobile: true})
+          }}>¿Cómo Jugar?</p>
+        </div>
         <div className="l-contain">
           <Link to="/">
             <div className="NavMob__Logo">
@@ -92,18 +165,31 @@ const Nav = () => {
           <div className="NavMob__Buttons">
             {manageMobUser()}
             <div className="NavMob__Play">
-              <button>Jugar</button>
+              <button onClick={setDesktopMessage}>Jugar</button>
             </div>
             <div className="NavMob__Bars">
               <div className="NavMob__Check">
-                <input type="checkbox"/>
+                <input type="checkbox" id="checkDrop" onClick={manageDrop}/>
                 <i className="fas fa-bars fa-2x"></i>
                 <i className="fas fa-times fa-2x"></i>
               </div>
             </div>
           </div>
         </div>
+        <div className="BgNav" onClick={resetBg}></div>
       </nav>
+      <ModalCarousel 
+        open={modal.open}
+        onClose={() => {setModal({
+          open: false,
+          mobile: false
+        })}}
+        onStart={()=>{setModal({
+          open: false,
+          mobile: false
+        })}}
+        mobile={modal.mobile}
+      />
     </>
   )
 }

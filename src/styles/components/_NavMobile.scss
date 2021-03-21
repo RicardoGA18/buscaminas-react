@@ -4,7 +4,39 @@
   position: fixed;
   box-shadow: 5px 5px 4px rgba(0,0,0,.25);
   top: 0;
+  z-index: 3;
   left: 0;
+  .BgNav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    display: none;
+  }
+  &__Drop{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: $Container;
+    transition: .3s all;
+    max-height: 0px;
+    overflow: hidden;
+    border: 0;
+    p{
+      width: 100%;
+      height: 50px;
+      padding: 0 20px;
+      @include flexCenter;
+      border-bottom: 1px solid $Hover;
+    }
+    p:last-child{
+      border-bottom: none;
+    }
+  }
   .l-contain{
     height: 100%;
     display: flex;

@@ -1,0 +1,129 @@
+.LogView{
+  padding-top: 50px;
+}
+@include mq($Desktop){
+  .LogView{
+    padding-top: 70px;
+    &__Content{
+      padding: 40px 15px;
+    }
+    &__Form{
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+  }
+}
+
+.LogForm{
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  &__Img{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: $Hover;
+    @include flexCenter;
+    i{
+      color: $Light;
+    }
+    img{
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__File{
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+    input[type="file"]{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 2;
+      cursor: pointer;
+    }
+    button{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      border: 1px solid $Light;
+      background: none;
+      color: $Light;
+      transition: .3s all;
+      i{
+        margin-right: 5px;
+        transition: .3s all;
+      }
+      p{
+        font-size: 16px;
+        transition: .3s all;
+      }
+    }
+    input[type="file"]:hover ~ button{
+      background-color: $Light;
+      color: black;
+    }
+  }
+  &__Input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 16px;
+    &:focus:valid{
+      box-shadow: 0 0 5px 2px rgb(93, 230, 93);
+    }
+    &:focus:invalid{
+      box-shadow: 0 0 5px 2px $Red;
+    }
+  }
+  &__Submit{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: $LightBlue;
+    color: $Light;
+    font-size: 18px;
+    font-weight: 700;
+    transition: .3s all;
+    cursor: pointer;
+    &:hover{
+      background-color: #2dbcf9b9;
+    }
+  }
+  &__Link{
+    color: $LightBlue;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s all;
+    &:hover{
+      color: #2dbcf9b9;
+    }
+  }
+}
+
+@include mq($Desktop){
+  .LogForm{
+    background-color: $Container;
+    border-radius: 15px;
+  }
+}

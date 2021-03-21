@@ -1,3 +1,302 @@
-.Header{
-  height: 500px;
+@keyframes mineHeaderOne{
+  25%{
+    transform: translate(-15px,10px) rotate(90deg);
+  }
+  50%{
+    transform: translate(-5px,10px) rotate(180deg);
+  }
+  75%{
+    transform: translate(-15px,15px) rotate(270deg);
+  }
+  100%{
+    transform: translate(0,0) rotate(360deg);
+  }
 }
+@keyframes mineHeaderTwo{
+  25%{
+    transform: translate(-20px,5px) rotate(90deg);
+  }
+  50%{
+    transform: translate(-15px,10px) rotate(180deg);
+  }
+  75%{
+    transform: translate(-20px,5px) rotate(270deg);
+  }
+  100%{
+    transform: translate(0,0) rotate(360deg);
+  }
+}
+@keyframes numberHeaderOne{
+  25%{
+    transform: translate(-20px,5px) rotate(15deg);
+  }
+  50%{
+    transform: translate(-15px,10px) rotate(10deg);
+  }
+  75%{
+    transform: translate(-20px,5px) rotate(-10deg);
+  }
+  100%{
+    transform: translate(0,0) rotate(0deg);
+  }
+}
+@keyframes numberHeaderTwo{
+  25%{
+    transform: translate(-5px,5px) rotate(10deg);
+  }
+  50%{
+    transform: translate(-10px,20px) rotate(-5deg);
+  }
+  75%{
+    transform: translate(-25px,10px) rotate(20deg);
+  }
+  100%{
+    transform: translate(0,0) rotate(0deg);
+  }
+}
+
+
+
+.Header{
+  .l-contain{
+    padding: 30px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  &__Mine,&__Number{
+    position: absolute;
+  }
+  &__Number{
+    font-weight: 900;
+    font-size: 72px;
+    color: rgba(255, 255, 255, .1);
+  }
+  &__Mine:first-child{
+    top: 10px;
+    right: 10px;;
+    animation: mineHeaderOne 15s linear infinite;
+  }
+  &__Mine:nth-child(2){
+    top: 89px;
+    right: 140px;
+    animation: mineHeaderTwo 15s linear infinite;
+  }
+  &__Mine:nth-child(3){
+    bottom: 30px;
+    right: 0;
+    animation: mineHeaderTwo 15s linear infinite;
+  }
+
+  &__Mine:nth-child(4){opacity: 0;};
+
+  &__Mine:nth-child(5){opacity: 0;};
+
+  &__Mine:nth-child(6){opacity: 0;};
+
+  &__Mine:nth-child(7){opacity: 0;};
+
+  &__Number:nth-child(8){
+    bottom: 30px;
+    right: 132px;
+    animation: numberHeaderOne 15s linear infinite;
+  }
+
+  &__Number:nth-child(9){
+    opacity: 1;
+    top: 115px;
+    right: 0;
+    animation: numberHeaderTwo 15s linear infinite;
+  }
+
+  &__Number:nth-child(10){
+    opacity: 0;
+  }
+  &__Number:nth-child(11){
+    opacity: 0;
+  }
+
+  &__Content{
+    h1{
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+    p{
+      font-weight: 400;
+      font-size: 14px;
+      width: 262px;
+      margin-bottom: 25px;
+    }
+    button{
+      height: 40px;
+      padding: 0 15px;
+      width: 150px;
+      border-radius: 10px;
+      border: none;
+      background-color: $LightBlue;
+      cursor: pointer;
+      font-size: 18px;
+      color: $Light;
+      font-weight: bold;
+      transition: .3s all;
+    }
+    button:hover{
+      background-color: #2dbcf9b9;
+    }
+  }
+}
+
+
+@include mq($Tablet){
+  .Header{
+    .l-contain{
+      padding: 68px 0 90px;
+    }
+    &__Mine:first-child{
+      top: 30px;
+      right: 70px;
+      animation: mineHeaderOne 15s linear infinite;
+    }
+    &__Mine:nth-child(2){
+      top: 10px;
+      right: 200px;
+      animation: mineHeaderTwo 15s linear infinite;
+    }
+    &__Mine:nth-child(3){
+      bottom: 30px;
+      right: 70px;
+      animation: mineHeaderTwo 15s linear infinite;
+    }
+    &__Mine:nth-child(4){
+      opacity: 1;
+      top: 20px;
+      left: 140px;
+      animation: mineHeaderTwo 15s linear infinite;};
+
+    &__Mine:nth-child(5){
+      opacity: 1;
+      bottom: 70px;
+      left: 100px;
+      animation: mineHeaderTwo 15s linear infinite;};
+
+    &__Number:nth-child(8){
+    top: 130px;
+    right: 50px;
+    }
+    &__Number:nth-child(9){
+    opacity: 0;
+    }
+    &__Number:nth-child(10){
+      opacity: 1;
+      top: 80px;
+      left: 70px;
+      animation: numberHeaderTwo 15s linear infinite;
+    }
+    &__Number:nth-child(11){
+      opacity: 1;
+      bottom: 20px;
+      left: 220px;
+      animation: numberHeaderTwo 15s linear infinite;
+    }
+    &__Content{
+      max-width: 421px;
+      margin: 0 auto;
+      h1{
+        font-size: 36px;
+        margin-bottom: 22px;
+        text-align: center;
+      }
+      p{
+        margin-bottom: 33px;
+        text-align: center;
+        width: 100%;
+      }
+      button{
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@include mq($Desktop){
+  .Header{
+    .l-contain{
+      padding: 112px 0 79px;
+    }
+    &__Mine:nth-child(1){
+      top: 50px;
+      right: 160px;
+    }
+    &__Mine:nth-child(2){
+      top: 5px;
+      right: 400px;
+    }
+    &__Mine:nth-child(3){
+      bottom: 100px;
+      right: 140px;
+    }
+    &__Mine:nth-child(4){
+      top: 20px;
+      left: 170px;
+      opacity: 1;
+    }
+  
+    &__Mine:nth-child(5){
+      bottom: 60px;
+      left: 290px;
+      opacity: 1;
+    }
+  
+    &__Mine:nth-child(6){
+      opacity: 1;
+      animation: mineHeaderTwo 15s linear infinite;
+      bottom: 140px;
+      left: 100px; 
+    }
+  
+    &__Mine:nth-child(7){
+      opacity: 1;
+      bottom: 60px;
+      right: 330px;
+      animation: mineHeaderOne 15s linear infinite;
+    }
+  
+    &__Number:nth-child(8){
+      opacity: 1;
+      top: 175px;
+      right: 140px;
+    }
+  
+    &__Number:nth-child(9){
+      opacity: 1;
+      top: 90px;
+      right: 300px;
+  }
+  
+    &__Number:nth-child(10){
+      opacity: 1;
+      top: 160px;
+      left: 210px;
+    }
+
+    &__Number:nth-child(11){
+      opacity: 1;
+      top: 70px;
+      left: 300px;
+    }
+  
+    &__Content{
+      max-width: 596px;
+      h1{
+        font-size: 50px;
+        margin-bottom: 27px;
+      }
+      p{
+        font-size: 18px;
+        margin-bottom: 35px;
+      }
+    }
+  }
+}
+

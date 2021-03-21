@@ -1,6 +1,28 @@
 import React from 'react'
+import multiplayer from '../assets/multiplayer.png' 
+import ranking from '../assets/ranking.png'
+import Swal from 'sweetalert2'
+import {useHistory} from 'react-router-dom'
+import desktop from '../assets/desktop.png'
 
 const Models = () => {
+  const history = useHistory()
+
+  const setModal = view => {
+    if(window.innerWidth >=1000){
+      history.push(`/`)
+    }else{
+      Swal.fire({
+        title: 'Whoops!',
+        text: 'Por el momento el juego solo funciona en desktop, cambia de dispositivo para comenzar a jugar.',
+        imageUrl: desktop,
+        imageWidth: 100,
+        imageHeight: 88.89,
+        imageAlt: 'Desktop',
+      })
+    }
+  }
+
   return (
     <div className="l-container">
       <div className="l-contain Modes">
@@ -10,16 +32,16 @@ const Models = () => {
         </div>
         <div className="Modes__Grid">
           <div className="Modes__Card">
-            <i className="fas fa-user fa-6x"></i>
-            <h3>Un Jugador</h3>
+            <img src={ranking} alt="ranking"/>
+            <h3>Ranking</h3>
             <p>En este modo, el objetivo principal es tratar de batir tu propio récord, el cual quedará grabado en tu cuenta, e ir escalando en nuestro ranking.</p>
-            <button>Jugar</button>
+            <button onClick={setModal}>Jugar</button>
           </div>
           <div className="Modes__Card">
-            <i className="fas fa-user-friends fa-6x"></i>
+            <img src={multiplayer} alt="multijugador"/>
             <h3>Multijugador</h3>
             <p>Aquí puedes retar a tus amigos, y jugar con ellos en tiempo real. Ganará el primero que logre liberar todos los cuadros del tablero primero.</p>
-            <button>Jugar</button>
+            <button onClick={setModal}>Jugar</button>
           </div>
         </div>
       </div>
