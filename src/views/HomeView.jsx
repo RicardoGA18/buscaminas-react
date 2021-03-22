@@ -16,7 +16,7 @@ const HomeView = () => {
       <Modes />
       <Contact />
       <Footer />
-      <a href="https://buscaminas-backend.herokuapp.com/api/docs/">
+      <a target="_blank" href="https://buscaminas-backend.herokuapp.com/api/docs/">
         <div className="HomeView__Back">
           <p>API Docs</p>
         </div>
