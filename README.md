@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# BuscaminasPVP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Link web Frontend [https://buscaminas-frontend.netlify.app/](https://buscaminas-frontend.netlify.app/).
+- Link docs Backend Docs [https://buscaminas-backend.herokuapp.com/api/docs/](https://buscaminas-backend.herokuapp.com/api/docs/).
+- Link Repo Backend [https://github.com/RicardoGA18/buscaminas-flask](https://github.com/RicardoGA18/buscaminas-flask)
 
 ## Available Scripts
 

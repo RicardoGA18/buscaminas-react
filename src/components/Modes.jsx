@@ -14,13 +14,20 @@ const Models = () => {
     }else{
       Swal.fire({
         title: 'Whoops!',
-        text: 'Por el momento el juego solo funciona en desktop, cambia de dispositivo para comenzar a jugar.',
+        html: `<span style="color: black">Por el momento el juego solo funciona en desktop, cambia de dispositivo para comenzar a jugar.</span>`,
         imageUrl: desktop,
         imageWidth: 100,
         imageHeight: 88.89,
         imageAlt: 'Desktop',
       })
     }
+  }
+
+  const commingSoon = () => {
+    Swal.fire({
+      title: 'Proximamente!',
+      icon: 'info'
+    })
   }
 
   return (
@@ -41,7 +48,7 @@ const Models = () => {
             <img src={multiplayer} alt="multijugador"/>
             <h3>Multijugador</h3>
             <p>Aquí puedes retar a tus amigos, y jugar con ellos en tiempo real. Ganará el primero que logre liberar todos los cuadros del tablero primero.</p>
-            <button onClick={() => {setModal('')}}>Jugar</button>
+            <button onClick={commingSoon}>Jugar</button>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ const RankingBox = () => {
 
   useEffect(() => {
     const getRanks = async () => {
-      const {data} = await axios.get('https://buscaminas-backend.herokuapp.com/api/ranking')
+      const {data} = await axios.get('http://127.0.0.1:5000/api/ranking')
       setRanking(data)
     }
     getRanks()
@@ -36,9 +36,9 @@ const RankingBox = () => {
   } 
 
   const setUserRank = () => {
-    return ranking.map(user => {
+    return ranking.map((user,idx) => {
       return (
-        <div className="RankingBox__Item">
+        <div className="RankingBox__Item" key={idx}>
           <div className="RankingBox__Img">
             {user.img ? (<img src={user.img} alt={user.username} />) : (<i className="fas fa-user"></i>)}
           </div>

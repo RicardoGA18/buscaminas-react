@@ -83,7 +83,6 @@ const OnePlayerView = () => {
             </div>
             <p>{user.username}</p>
           </div>
-          <p className="Ranking__Best">Mejor Tiempo: 01 : 22</p>
           <div className="Ranking__Content">
             <div className="Ranking__GameInfo">
               <Timer />

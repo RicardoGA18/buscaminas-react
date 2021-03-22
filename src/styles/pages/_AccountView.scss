@@ -1,42 +1,40 @@
 .AccountView {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 30px;
     &__ProfilePhoto{
         background-color: $Gray;
         border-radius: 20px;
         height: 319px;
         border-radius: 0px 0px 40px 40px;
-        display: flex;
-        justify-content: center;
-
-
+        @include flexCenter;
         img  {
-            position: relative;
-            top: 100px;
-            padding: 25px 0;
-            width: 150px;
-            height: 150px;
+            width: 100%;
+            max-width: 150px;
+            max-height: 100%;
             border: none;
             border-radius: 27px;
-            }
+        }
     }
 
-    &__Title,&__Info,&__Ranking,&__Multiplayer{
-        background-color: $Dark;
-        width: 100%;
-
-        h1  {
-            padding: 25px 0;
-            max-width: 370px;
-            font-size: 24px;
-            text-align: center;
-            margin: 0 auto;
-            margin-bottom: 25px;
-            }
-        h2  {
-            padding: 25px 0;
-            max-width: 370px;
-            font-size: 14px;
-            margin: 0 auto;
-            margin-bottom: 25px;
-            }
-    }   
+    &__Title{
+        font-size: 18px;
+        text-align: center;
+        margin: 20px 0;
+    }  
+    &__Info{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        border: 2px solid $Hover;
+        border-radius: 15px;
+        padding: 15px;
+        h1{
+            font-size: 30px;
+        }
+        h2{
+            font-size: 18px;
+        }
+    }
 }

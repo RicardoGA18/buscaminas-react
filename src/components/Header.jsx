@@ -1,8 +1,11 @@
 import React from 'react'
 // Assets
 import mina from '../assets/mina.svg'
+import {useHistory} from 'react-router-dom'
 
 const Header = () => {
+  const history = useHistory()
+
   return (
     <div className="Header l-container">
       <div className="l-contain">
@@ -20,7 +23,7 @@ const Header = () => {
         <div className="Header__Content">
           <h1>BuscaminasPVP</h1>
           <p>Juega al clásico y popular buscaminas con tus amigos en tiempo real, o puedes jugar en solitario para romper tus propios récords, ascender en nuestro ranking y demostrarle a los demás que eres el mejor. Aceptas el desafío?</p>
-          <button>Juega ahora</button>
+          <button onClick={() => {history.push('/jugar')}}>Juega ahora</button>
         </div>
       </div>
     </div>

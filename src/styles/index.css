@@ -1967,6 +1967,13 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+.AccountView {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
 .AccountView__ProfilePhoto {
   background-color: #7E8F9F;
   border-radius: 20px;
@@ -1978,37 +1985,41 @@ input:focus, textarea:focus, select:focus, button:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .AccountView__ProfilePhoto img {
-  position: relative;
-  top: 100px;
-  padding: 25px 0;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  max-width: 150px;
+  max-height: 100%;
   border: none;
   border-radius: 27px;
 }
 
-.AccountView__Title, .AccountView__Info, .AccountView__Ranking, .AccountView__Multiplayer {
-  background-color: #0E1B24;
-  width: 100%;
-}
-
-.AccountView__Title h1, .AccountView__Info h1, .AccountView__Ranking h1, .AccountView__Multiplayer h1 {
-  padding: 25px 0;
-  max-width: 370px;
-  font-size: 24px;
+.AccountView__Title {
+  font-size: 18px;
   text-align: center;
-  margin: 0 auto;
-  margin-bottom: 25px;
+  margin: 20px 0;
 }
 
-.AccountView__Title h2, .AccountView__Info h2, .AccountView__Ranking h2, .AccountView__Multiplayer h2 {
-  padding: 25px 0;
-  max-width: 370px;
-  font-size: 14px;
-  margin: 0 auto;
-  margin-bottom: 25px;
+.AccountView__Info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.AccountView__Info h1 {
+  font-size: 30px;
+}
+
+.AccountView__Info h2 {
+  font-size: 18px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -44,7 +44,7 @@ const Box = ({row,col}) => {
         }
       },0)
     },0)
-    if( 16 *16 == freeBoxes && numBombs == safeBoxes){
+    if( (16 * 16  == (freeBoxes + safeBoxes)) && numBombs == safeBoxes){
       setRankingConfig({
         ...rankingConfig,
         isPlaying: false,
