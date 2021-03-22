@@ -293,6 +293,15 @@ input:focus, textarea:focus, select:focus, button:focus {
   overflow: hidden;
   margin-right: 10px;
   background-color: #0E1B24;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .Nav__UserImg img {
@@ -508,6 +517,15 @@ input:focus, textarea:focus, select:focus, button:focus {
   border-radius: 5px;
   background-color: #0E1B24;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .NavMob__UserImg img {

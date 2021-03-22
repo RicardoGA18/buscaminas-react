@@ -1,10 +1,20 @@
-import React from 'react'
+import React,{useContext} from 'react'
 // Assets
 import mina from '../assets/mina.svg'
 import {useHistory} from 'react-router-dom'
+import AppContext from '../context/App/AppContext'
 
 const Header = () => {
   const history = useHistory()
+  const {user} = useContext(AppContext)
+
+  const setButton = () => {
+    if(user){
+      return <button onClick={() => {history.push('/jugar')}}>Juega ahora</button>
+    }else{
+      return <button onClick={() => {history.push('/iniciar-sesion')}}>Juega ahora</button>
+    }
+  }
 
   return (
     <div className="Header l-container">
@@ -23,7 +33,7 @@ const Header = () => {
         <div className="Header__Content">
           <h1>BuscaminasPVP</h1>
           <p>Juega al clásico y popular buscaminas con tus amigos en tiempo real, o puedes jugar en solitario para romper tus propios récords, ascender en nuestro ranking y demostrarle a los demás que eres el mejor. Aceptas el desafío?</p>
-          <button onClick={() => {history.push('/jugar')}}>Juega ahora</button>
+          {setButton()}
         </div>
       </div>
     </div>

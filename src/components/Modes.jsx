@@ -1,16 +1,22 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import multiplayer from '../assets/multiplayer.png' 
 import ranking from '../assets/ranking.png'
 import Swal from 'sweetalert2'
 import {useHistory} from 'react-router-dom'
 import desktop from '../assets/desktop.png'
+import AppContext from '../context/App/AppContext'
 
 const Models = () => {
+  const {user} = useContext(AppContext)
   const history = useHistory()
 
   const setModal = view => {
     if(window.innerWidth >=1000){
-      history.push(`/jugar/${view}`)
+      if(user){
+        history.push(`/jugar/${view}`)
+      }else{
+        history.push('/iniciar-sesion')
+      }
     }else{
       Swal.fire({
         title: 'Whoops!',
