@@ -7,7 +7,7 @@ import AppContext from './AppContext'
 import {auth} from '../../firebase'
 
 // Types
-import {SET_ERROR,SET_USER} from '../types'
+import {SET_ERROR,SET_USER,SET_RANKING,SET_RANKING_CONFIG,SET_RANK} from '../types'
 
 // Request Functions
 import manageRegister from '../utils/manageRegister'
@@ -17,9 +17,39 @@ const AppState = (props) => {
   const INITIAL_STATE = {
     user: null,
     error: null,
+    rankingGame: [],
+    rankingConfig:{
+      isPlaying: false,
+      isFinish: false,
+      win: false,
+      lost: false,
+      time: 0
+    },
+    ranking: [],
   }
 
   const [state, dispatch] = useReducer(AppReducer, INITIAL_STATE)
+
+  const setRanking = rank => {
+    dispatch({
+      type: SET_RANK,
+      payload: rank
+    })
+  }
+
+  const setRankingGame = game => {
+    dispatch({
+      type: SET_RANKING,
+      payload: game
+    })
+  }
+
+  const setRankingConfig = config => {
+    dispatch({
+      type: SET_RANKING_CONFIG,
+      payload: config
+    })
+  }
 
   const logout = async () => {
     try {
@@ -100,11 +130,17 @@ const AppState = (props) => {
     <AppContext.Provider value={{ 
       user: state.user,
       error: state.error,
+      rankingGame: state.rankingGame,
+      rankingConfig: state.rankingConfig,
+      ranking: state.ranking,
       setError,
       register,
       reviewUser,
       logout,
       login,
+      setRankingGame,
+      setRankingConfig,
+      setRanking,
     }}>
       {props.children}
     </AppContext.Provider>

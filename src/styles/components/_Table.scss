@@ -1,0 +1,42 @@
+.Table{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(16,1fr);
+  grid-template-rows: repeat(16,40px);
+  grid-gap: 5px;
+}
+
+.Box{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  @include flexCenter;
+  &.is-blocked{
+    background-color: $LightBlue;
+    box-shadow: $Blocked;
+  }
+  &.is-unblocked{
+    background: none;
+    box-shadow: $UnBlocked;
+    span{
+      font-size: 24px;
+      font-weight: 600;
+      color: $Light;
+    }
+  }
+  &.is-safe{
+    background-color: $Gray;
+    box-shadow: $Blocked;
+    i{
+      color: $Dark;
+    }
+  }&.is-bomb{
+    background-color: $Red;
+    box-shadow: $Blocked;
+    img{
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

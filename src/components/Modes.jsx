@@ -10,7 +10,7 @@ const Models = () => {
 
   const setModal = view => {
     if(window.innerWidth >=1000){
-      history.push(`/`)
+      history.push(`/jugar/${view}`)
     }else{
       Swal.fire({
         title: 'Whoops!',
@@ -35,13 +35,13 @@ const Models = () => {
             <img src={ranking} alt="ranking"/>
             <h3>Ranking</h3>
             <p>En este modo, el objetivo principal es tratar de batir tu propio récord, el cual quedará grabado en tu cuenta, e ir escalando en nuestro ranking.</p>
-            <button onClick={setModal}>Jugar</button>
+            <button onClick={() => {setModal('un-jugador')}}>Jugar</button>
           </div>
           <div className="Modes__Card">
             <img src={multiplayer} alt="multijugador"/>
             <h3>Multijugador</h3>
             <p>Aquí puedes retar a tus amigos, y jugar con ellos en tiempo real. Ganará el primero que logre liberar todos los cuadros del tablero primero.</p>
-            <button onClick={setModal}>Jugar</button>
+            <button onClick={() => {setModal('')}}>Jugar</button>
           </div>
         </div>
       </div>

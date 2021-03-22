@@ -1,6 +1,7 @@
 /* Settings */
 /* Colors */
 /* Breakpoints */
+/* Shadows */
 /* Padding */
 /* Tools */
 /*  Generic and ELements */
@@ -1437,6 +1438,326 @@ input:focus, textarea:focus, select:focus, button:focus {
   }
 }
 
+.Ranking .l-contain {
+  padding: 35px 0;
+}
+
+.Ranking__Title {
+  padding: 0 35px;
+  position: relative;
+}
+
+.Ranking__Title h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.Ranking__Title div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+
+.Ranking__Info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.Ranking__Info p {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.Ranking__Img {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.Ranking__Img img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.Ranking__Best {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.Ranking__Content {
+  width: 100%;
+  max-width: 715px;
+  margin: 0 auto;
+}
+
+.Ranking__GameInfo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.Ranking__Timer {
+  width: 208px;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.Ranking__Timer i {
+  color: #1E81AA;
+  margin-right: 10px;
+}
+
+.Ranking__Timer p {
+  color: #1E81AA;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.Ranking__Button-Mines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Ranking__Button {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  background-color: #2DBDF9;
+  -webkit-transition: .3s all;
+  transition: .3s all;
+  margin-right: 27px;
+}
+
+.Ranking__Button i {
+  color: #FFFFFF;
+}
+
+.Ranking__Button:hover {
+  background-color: #1E81AA;
+}
+
+.Ranking__Mines {
+  width: 150px;
+  height: 70px;
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Ranking__Mines img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.Ranking__Mines p {
+  color: #1E81AA;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.Table {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[16];
+      grid-template-columns: repeat(16, 1fr);
+  -ms-grid-rows: (40px)[16];
+      grid-template-rows: repeat(16, 40px);
+  grid-gap: 5px;
+}
+
+.Box {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Box.is-blocked {
+  background-color: #2DBDF9;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(255, 255, 255, 0.25);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.Box.is-unblocked {
+  background: none;
+  -webkit-box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1), inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.1), inset 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Box.is-unblocked span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.Box.is-safe {
+  background-color: #7E8F9F;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(255, 255, 255, 0.25);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.Box.is-safe i {
+  color: #0E1B24;
+}
+
+.Box.is-bomb {
+  background-color: #EB5757;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(255, 255, 255, 0.25);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), inset 4px 4px 4px rgba(255, 255, 255, 0.25);
+}
+
+.Box.is-bomb img {
+  width: 25px;
+  height: 25px;
+}
+
+.RankingBox {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+}
+
+.RankingBox__Title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.RankingBox__Content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.RankingBox__Item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40px 1fr 50px;
+      grid-template-columns: 40px 1fr 50px;
+  padding: 15px 0;
+  grid-gap: 10px;
+}
+
+.RankingBox__Img {
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.RankingBox__Img img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.RankingBox__Img i {
+  color: #FFFFFF;
+}
+
+.RankingBox__Username {
+  color: #FFFFFF;
+  font-size: 18px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.RankingBox__Time {
+  color: #FFFFFF;
+  font-size: 18px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 /* Pages */
 .HomeView {
   padding-top: 50px;
@@ -1644,5 +1965,50 @@ input:focus, textarea:focus, select:focus, button:focus {
     background-color: #26323A;
     border-radius: 15px;
   }
+}
+
+.AccountView__ProfilePhoto {
+  background-color: #7E8F9F;
+  border-radius: 20px;
+  height: 319px;
+  border-radius: 0px 0px 40px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.AccountView__ProfilePhoto img {
+  position: relative;
+  top: 100px;
+  padding: 25px 0;
+  width: 150px;
+  height: 150px;
+  border: none;
+  border-radius: 27px;
+}
+
+.AccountView__Title, .AccountView__Info, .AccountView__Ranking, .AccountView__Multiplayer {
+  background-color: #0E1B24;
+  width: 100%;
+}
+
+.AccountView__Title h1, .AccountView__Info h1, .AccountView__Ranking h1, .AccountView__Multiplayer h1 {
+  padding: 25px 0;
+  max-width: 370px;
+  font-size: 24px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.AccountView__Title h2, .AccountView__Info h2, .AccountView__Ranking h2, .AccountView__Multiplayer h2 {
+  padding: 25px 0;
+  max-width: 370px;
+  font-size: 14px;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,4 +1,4 @@
-import {SET_ERROR,SET_USER} from '../types'
+import {SET_ERROR,SET_USER,SET_RANKING,SET_RANKING_CONFIG,SET_RANK} from '../types'
 
 const AppReducer =  (state,action) => {
   const {payload,type} = action
@@ -12,6 +12,21 @@ const AppReducer =  (state,action) => {
       return {
         ...state,
         user: payload
+      }
+    case SET_RANKING:
+      return {
+        ...state,
+        rankingGame: payload
+      }
+    case SET_RANKING_CONFIG:
+      return {
+        ...state,
+        rankingConfig: payload
+      }
+    case SET_RANK:
+      return {
+        ...state,
+        ranking: payload
       }
     default:
       return state

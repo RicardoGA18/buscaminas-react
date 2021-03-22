@@ -50,7 +50,7 @@ const Nav = () => {
     if(user){
       return (
         <>
-          <div className="Nav__User">
+          <div className="Nav__User" onClick={() => {history.push('/perfil')}}>
             {user.img
               ? (<div className="Nav__UserImg"><img src={user.img} alt={`Foto de perfil de ${user.username}`} /></div>)
               : (<i className="fas fa-user"></i>)}
@@ -84,7 +84,7 @@ const Nav = () => {
     if(user){
       return (
         <>
-          <div className="NavMob__User">
+          <div className="NavMob__User" onClick={() => {history.push('/perfil')}}>
             {user.img
               ? (<div className="NavMob__UserImg"><img src={user.img} alt={`Foto de perfil de ${user.username}`} /></div>)
               : (<i className="fas fa-user"></i>)}

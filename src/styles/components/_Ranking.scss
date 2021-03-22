@@ -1,0 +1,116 @@
+.Ranking{
+  .l-contain{
+    padding: 35px 0;
+  }
+  &__Title{
+    padding: 0 35px;
+    position: relative;
+    h2{
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    div{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: $Light;
+    }
+  }
+  &__Info{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    p{
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+  &__Img{
+    width: 50px;
+    height: 50px;
+    background-color: $Hover;
+    border-radius: 10px;
+    overflow: hidden;
+    @include flexCenter;
+    margin-right: 20px;
+    img{
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__Best{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  &__Content{
+    width: 100%;
+    max-width: 715px;
+    margin: 0 auto;
+  }
+  &__GameInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+  &__Timer{
+    width: 208px;
+    height: 70px;
+    @include flexCenter;
+    box-shadow: $Timer;
+    border: 3px solid $Hover;
+    border-radius: 5px;
+    i{
+      color: #1E81AA;
+      margin-right: 10px;
+    }
+    p{
+      color: #1E81AA;
+      font-size: 32px;
+      font-weight: 500;
+    }
+  }
+  &__Button-Mines{
+    display: flex;
+  }
+  &__Button{
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 5px;
+    @include flexCenter;
+    cursor: pointer;
+    background-color: $LightBlue;
+    transition: .3s all;
+    margin-right: 27px;
+    i{
+      color: $Light;
+    }
+    &:hover{
+      background-color: #1E81AA;
+    }
+  }
+  &__Mines{
+    width: 150px;
+    height: 70px;
+    box-shadow: $Timer;
+    border: 3px solid $Hover;
+    border-radius: 5px;
+    @include flexCenter;
+    img{
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    p{
+      color: #1E81AA;
+      font-size: 32px;
+      font-weight: 500;
+    }
+  }
+}

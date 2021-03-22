@@ -13,6 +13,8 @@ import HomeView from './views/HomeView'
 import LoginView from './views/LoginView'
 import RegisterView from './views/RegisterView'
 import PlayView from './views/PlayView'
+import OnePlayerView from './views/OnePlayerView'
+import AccountView from './views/AccountView'
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
               <LogRoute exact path="/iniciar-sesion" component={LoginView} />
               <LogRoute exact path="/registro" component={RegisterView} />
               <PrivateRoute exact path="/jugar" component={PlayView} />
+              <PrivateRoute exact path="/jugar/un-jugador" component={OnePlayerView} />
+              <PrivateRoute exact path="/perfil" component={AccountView} />
             </Switch>
           </BrowserRouter>
         </Observer>
