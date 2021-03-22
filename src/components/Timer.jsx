@@ -63,13 +63,13 @@ const Timer = () => {
   const manageWin = async () => {
     try {
       openModalCharge()
-      const response = await axios.post('http://127.0.0.1:5000/api/ranking',{
+      const response = await axios.post('https://buscaminas-backend.herokuapp.com/api/ranking',{
         time: rankingConfig.time,
         img: user.img,
         username: user.username
       })
       if(response){
-        const {data} = await axios.get('http://127.0.0.1:5000/api/ranking')
+        const {data} = await axios.get('https://buscaminas-backend.herokuapp.com/api/ranking')
         setRanking(data)
       }
       closeModalCharge()

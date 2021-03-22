@@ -7,7 +7,7 @@ const RankingBox = () => {
 
   useEffect(() => {
     const getRanks = async () => {
-      const {data} = await axios.get('http://127.0.0.1:5000/api/ranking')
+      const {data} = await axios.get('https://buscaminas-backend.herokuapp.com/api/ranking')
       setRanking(data)
     }
     getRanks()
